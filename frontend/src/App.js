@@ -1,9 +1,7 @@
 import  Main  from './container/Main'
 import Header from './container/Header'
 import {  Route } from 'react-router-dom'
-import ProductDetail from './container/ProductDetail'
 import DetailsxId from './container/DetailsxId';
-import ProductCard from './container/ProductCard';
 function App() {
   return (
     <div className="App">

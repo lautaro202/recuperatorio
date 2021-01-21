@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import {getDetails } from './redux/actions'
-import { useSelector, useDispatch } from 'react-redux'
-import ProductDetail from './ProductDetail'
 
 const ProductCard = ({imagen, title, price, condition, stock, id}) =>{
 

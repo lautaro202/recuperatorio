@@ -13,7 +13,7 @@ const initialState = {
     currentsort: '',
     condition: '',
     details:[],
-    pictures:[]
+    pictures:[],
 }
 
 function rootReducer(state = initialState, action) {
@@ -34,6 +34,7 @@ function rootReducer(state = initialState, action) {
                 photos: action.payload.photos
             }
         }
+
         default:
             return state
     }
