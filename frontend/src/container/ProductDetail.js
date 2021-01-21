@@ -1,24 +1,20 @@
 import React from 'react'
-import './css/productdetail.scss'
 
  function ProductDetail({image,title, price, condition, stock}) {
     return (
-        <div className='ProductID'>
-            <div className='box'>
-                <div className='idBox'>
-                    <h3>{title}</h3>
-                    <img src={image}/>
-                </div>
-            <div className='info'>
-                <h5>Condition: </h5>
+        <div>
+            <img
+            src={image}
+            alt='no se cargó la imagen salu2'   
+            />
+            <div>
+                holi
+                <h3>{title}</h3>
+                <h4>$ {price}</h4>
                 <p>{condition}</p>
-                <div className='details'>
-                    <h5>Price: $ {price}</h5> 
-                    <p>Stock: {stock}</p>
-                </div>
+                <p>Stock: {stock}</p>
             </div>
         </div>
-    </div>
     )
 }
 

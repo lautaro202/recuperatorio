@@ -37,11 +37,13 @@ function Catalog() {
 
             </div>
         <div class="cajaproductos">
-            <div>
-            <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_asc)) }}>Mayor Precio</span>
-            <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_desc)) }}>Menor Precio</span>
-            <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort, usado)) }}>Usado </span>
-            <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort,nuevo )) }}>Nuevo </span>
+            <div className='container'>
+                <div classname='sort' style={{fontSize:'20px', cursor:'pointer', justifyContent:'space-between', display:'flex', paddingTop:'20px', paddingBottom:'20px'}}>
+                    <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_asc)) }}>Menor Precio</span>
+                    <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_desc)) }}>Mayor Precio</span>
+                    <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort, usado)) }}>Usado </span>
+                    <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort,nuevo )) }}>Nuevo </span>
+                </div>
 
 
             {
