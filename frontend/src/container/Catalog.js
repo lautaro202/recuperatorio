@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
-import { getProducts } from './redux/actions'
+import { getCondition, getProducts } from './redux/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from './ProductCard'
+import './css/catalog.scss'
 
 function Catalog() {
     const dispatch = useDispatch()
@@ -9,16 +10,41 @@ function Catalog() {
     const Products = useSelector(state => state.products)
     const Page = useSelector(state => state.currentoffset)
     const Sort = useSelector(state => state.currentsort)
+    const Condition = useSelector(state => state.condition)
+    let sort_asc = 'price_asc'
+    let sort_desc = 'price_desc'
+    let nuevo = '2230284'
+    let usado = '2230581'
 
     useEffect(() => {
         dispatch(getProducts(Product, Page, Sort))
-    }, [getProducts])
+        dispatch(getCondition(Condition))
+    }, [getProducts, getCondition])
 
     return (
-        <div >
+        <div className='main'>
+            <div class="pagination">
+                    <label><span class="previous" onClick={() => { dispatch(getProducts(Product, Page - 10, Sort)) }} >Previous &nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+ </span></label>
+                    <span class="previous" onClick={() => { dispatch(getProducts(Product, Page + 10, Sort)) }}>Next</span>
+
+            </div>
         <div class="cajaproductos">
             <div>
-            {!Products.length ? <div class="cataloguesearch"><h1>Realice su busqueda</h1></div> : 
+            <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_asc)) }}>Mayor Precio</span>
+            <span class="asc_price" onClick={() => { dispatch(getProducts(Product, Page, sort_desc)) }}>Menor Precio</span>
+            <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort, usado)) }}>Usado </span>
+            <span class="asc_price" onClick={() => { dispatch(getCondition(Product, Page, Sort,nuevo )) }}>Nuevo </span>
+
+
+            {
                 Products.map(product =>
                     <ProductCard
                     key={product.id}
@@ -30,7 +56,9 @@ function Catalog() {
                     id={product.id}
                 />)}
             </div>
+            
         </div>
+        
     </div>
 
     )

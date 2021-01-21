@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from './redux/actions';
 
@@ -19,22 +19,21 @@ export default function SearchBar () {
     }
     
     return (
+        
         <form 
         onSubmit={(e) => 
         handleSubmit(e)} 
-        className={`searchBar`}>
-            <input 
-                type='text' 
-                className='input' 
-                value={input} 
-                placeholder='What are you looking for?' 
-                onChange={(e) => handleChange(e)}>     
-            </input>
-            <input 
-                type='submit' 
-                value='Search' 
-                className='btnSearch'>
-            </input>
+        className='searchBar'>
+            <div class="search__container">
+                <p class="search__title">
+
+                </p>
+                <input
+                onChange={handleChange}
+                onSubmit={handleSubmit}
+                class="search__input" type="text" placeholder="Realice su búsqueda"/>
+            </div>
+
         </form>
     )
 }

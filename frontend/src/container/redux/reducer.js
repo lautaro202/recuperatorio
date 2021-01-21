@@ -1,8 +1,8 @@
 
-import { bindActionCreators } from 'redux'
 import {
     GET_PRODUCTS,
-    GET_DETAILS
+    GET_DETAILS,
+    GET_CONDITION
 } from './constants'
 
 
@@ -32,6 +32,16 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 details: action.payload,
                 photos: action.payload.photos
+            }
+        }
+        case GET_CONDITION: {
+            return {
+                ...state,
+                currentproduct: action.payload.query,
+                products: action.payload.results,
+                currentoffset: action.payload.paging.offset,
+                currentsort: action.payload.sort.id,
+                condition: action.payload.filters
             }
         }
 

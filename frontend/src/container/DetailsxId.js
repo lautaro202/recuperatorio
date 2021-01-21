@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { getDetails } from './redux/actions.js'
 import { useSelector, useDispatch } from "react-redux"
 import ProductDetail from './ProductDetail'
+import './css/productdetail.scss'
 
 const Details = ({match}) => {
 

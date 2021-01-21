@@ -1,0 +1,23 @@
+.main{  
+    text-decoration: none;
+    .productcard{
+        display:flex;
+        .productimg{
+            max-width: 5rem;
+            max-height: 5rem;
+            min-width: 5rem;
+            min-height: 5rem;
+        }
+        .productTitle{
+            text-align: center;
+            text-decoration: none;
+            color:black
+        }
+        .table{
+            text-align: center;
+            tr{
+                text-align: center;
+            }
+        }
+    }
+}

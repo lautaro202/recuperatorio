@@ -2,7 +2,8 @@ import axios from 'axios'
 
 import {
     GET_DETAILS,
-    GET_PRODUCTS
+    GET_PRODUCTS,
+    GET_CONDITION
 } from './constants'
 
 export function getProducts(payload, offset = 0, sort) {
@@ -24,5 +25,16 @@ export function getDetails(id) {
             dispatch({type: GET_DETAILS, payload:data})
         })
         .catch(error => alert(error))
+    }
+}
+
+export function getCondition(payload, offset = 0, sort,condition) {
+    return function (dispatch) {
+        axios.get(`http://localhost:3001/api/search/condition?q=${payload}&limit=15&offset=${offset}&sort=${sort}&ITEM_CONDITION=${condition}`)
+            .then((res) => res.data )
+            .then ( data => {
+                dispatch({ type: GET_CONDITION, payload:data})
+            })
+            .catch(error => alert(error))
     }
 }
