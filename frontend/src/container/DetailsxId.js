@@ -8,6 +8,7 @@ const Details = ({match}) => {
 
     const dispatch = useDispatch()
     const Details = useSelector(state => state.details)
+    const Picture = useSelector(state => state.pictures)
 
     useEffect(() => {
         dispatch(getDetails(match.params.id));
@@ -16,7 +17,8 @@ const Details = ({match}) => {
         <div class="catalogue">
                {
                 <ProductDetail  
-                    image={Details.secure_thumbnail}
+                
+                    image={Picture}
                     title={Details.title}
                     price={Details.price}
                     condition={Details.condition}
@@ -24,6 +26,7 @@ const Details = ({match}) => {
                     id={Details.id}
                     warranty={Details.warranty}
                 />}
+                {console.log(Picture)}
         </div>
     )
 }

@@ -24,7 +24,9 @@ function Catalog() {
     return (
         <div className='main'>
             <div class="pagination">
-                    <label><span class="previous" onClick={() => { dispatch(getProducts(Product, Page - 10, Sort)) }} >Previous &nbsp;&nbsp;
+                    <label><span class="previous" onClick={() => { dispatch(getProducts(Product, Page - 10, Sort)) }} >Previous 
+                    &nbsp;
+                    &nbsp;
                     &nbsp;
                     &nbsp;
                     &nbsp;

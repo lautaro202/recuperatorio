@@ -8,7 +8,7 @@ const ProductCard = ({imagen, title, price, condition, stock, id}) =>{
     <div classname='main'>
         <div class="productcard">
             <Link to={`/products/details/${id}`}>
-                <img class="productimg" src={imagen}></img>
+                <img class="productimg" src={imagen} alt='no se cargo la imagen'></img>
             </Link>
             <table class="productdetails">
                 <NavLink 

@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const fetch = require('node-fetch')
 const cors = require('cors')
 
 //Inicio de Middleware

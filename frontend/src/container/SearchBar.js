@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useRouteMatch, Link, NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
 import { getProducts } from './redux/actions';
 
 import './css/searchBar.scss';

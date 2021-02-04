@@ -31,7 +31,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 details: action.payload,
-                photos: action.payload.photos
+                pictures: action.payload.pictures[0].url
             }
         }
         case GET_CONDITION: {
